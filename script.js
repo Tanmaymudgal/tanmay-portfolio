@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .querySelectorAll(".contact-footer span:last-child")
     .forEach((item) => {
-      item.textContent = `� ${new Date().getFullYear()} TANMAY`;
+      item.textContent = `© ${new Date().getFullYear()} TANMAY`;
     });
 
   // --------------------------------
@@ -288,3 +288,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
+/* Homepage interaction layer */
+document.addEventListener("DOMContentLoaded", () => {
+  const cursor = document.querySelector(".tm-cursor");
+  if (cursor) {
+    document.querySelectorAll("a, button, .project").forEach((el) => {
+      el.addEventListener("mouseenter", () => document.body.classList.add("cursor-hover"));
+      el.addEventListener("mouseleave", () => document.body.classList.remove("cursor-hover"));
+    });
+  }
+
+  const hero = document.querySelector(".hero h1");
+  if (hero && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    window.addEventListener("scroll", () => {
+      const y = Math.min(window.scrollY * 0.08, 28);
+      hero.style.transform = "translate3d(0," + y + "px,0)";
+    }, { passive: true });
+  }
+});
