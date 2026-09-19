@@ -34,37 +34,14 @@
   box-sizing: border-box;
 }
 
-/* =========================================================
-   GLOBAL
-========================================================= */
+/* Global primitives are provided by global.css. UBS owns only case-study styles here. */
 
-body {
+.ubs-page {
   background: var(--ubs-white);
   color: var(--ubs-black);
-
-  /* IMPORTANT:
-     Geist comes from your main portfolio stylesheet.
-     We do NOT import Inter / Manrope / Neue Montreal.
-  */
-
   font-family: "Geist", sans-serif;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-img {
-  display: block;
-  width: 100%;
-}
-
-figure {
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 /* =========================================================
