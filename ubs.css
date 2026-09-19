@@ -1293,3 +1293,102 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* =========================================================
+   FINAL PORTFOLIO NAV + TM CURSOR OVERRIDE
+   Keeps the UBS page aligned with the main portfolio system.
+========================================================= */
+
+.ubs-nav {
+  padding: 0 32px;
+  min-height: 74px;
+  background: rgba(245, 244, 239, 0.92);
+  color: #111111;
+  mix-blend-mode: normal;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.ubs-nav-inner {
+  min-height: 74px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 32px;
+}
+
+.ubs-logo {
+  font-size: 17px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.ubs-logo span {
+  color: #e4002b;
+}
+
+.ubs-nav-right {
+  align-items: center;
+  gap: 28px;
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.ubs-nav-right a {
+  opacity: 0.72;
+  transition: opacity 0.25s ease;
+}
+
+.ubs-nav-right a:hover {
+  opacity: 1;
+}
+
+.tm-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  pointer-events: none;
+  opacity: 0;
+  color: #e4002b;
+  font-family: "Geist", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  white-space: nowrap;
+  mix-blend-mode: normal;
+  will-change: transform;
+}
+
+@media (max-width: 700px) {
+  .ubs-nav {
+    padding: 0 16px;
+  }
+
+  .ubs-nav-inner {
+    min-height: 68px;
+  }
+
+  .ubs-nav-right {
+    gap: 15px;
+    font-size: 9px;
+  }
+
+  .ubs-nav-right a:nth-child(2) {
+    display: none;
+  }
+
+  .tm-cursor {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tm-cursor {
+    display: none;
+  }
+}
