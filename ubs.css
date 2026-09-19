@@ -1484,3 +1484,70 @@ a {
   .ubs-nav-right a:nth-child(2) { display: none !important; }
   .tm-cursor { display: none !important; }
 }
+
+
+/* =========================================================
+   UBS VISUAL REFINEMENT — FINAL COMPONENTS
+========================================================= */
+.ubs-dark, .ubs-vision { color:#fff; }
+.ubs-dark .ubs-section-content h2, .ubs-dark .ubs-section-content p, .ubs-dark .ubs-label, .ubs-dark .ubs-small-label { color:inherit; }
+.ubs-dark .ubs-section-content p { color:#b8b8b8 !important; }
+.ubs-dark .ubs-label, .ubs-dark .ubs-small-label { color:#777 !important; }
+.ubs-research-grid h3, .ubs-research-grid p, .ubs-research-grid article { color:#fff; }
+.ubs-research-grid p { color:#a7a7a7 !important; }
+.ubs-persona { color:#fff; }
+.ubs-persona small { color:#8d8d8d !important; }
+.ubs-persona h3 { color:#fff !important; }
+.ubs-persona p { color:#b0b0b0 !important; }
+.persona-role { margin:-10px 0 20px; color:#e4002b; font-size:11px; text-transform:uppercase; letter-spacing:.08em; }
+.persona-detail { margin-top:28px; padding-top:18px; border-top:1px solid #292929; }
+.persona-detail span { display:block; margin-bottom:7px; color:#666; font-size:9px; letter-spacing:.12em; }
+.persona-detail strong { display:block; color:#eee; font-size:12px; font-weight:500; line-height:1.45; }
+
+.opportunity-map { margin-top:90px; display:grid; grid-template-columns:1fr 54px 1fr; gap:22px; align-items:stretch; }
+.opp-column { display:grid; gap:10px; }
+.opp-head { padding-bottom:12px; color:#777; font-size:10px; letter-spacing:.12em; }
+.opp-card { min-height:128px; padding:22px; border:1px solid #292929; background:#0b0b0b; transition:transform .45s var(--ubs-ease),border-color .45s ease,background .45s ease; }
+.opp-card:hover { transform:translateY(-4px); border-color:#555; background:#111; }
+.opp-card b { display:block; margin-bottom:18px; color:#e4002b; font-size:10px; font-weight:500; }
+.opp-card strong { display:block; margin-bottom:8px; color:#fff; font-size:17px; font-weight:500; letter-spacing:-.025em; }
+.opp-card p { margin:0; color:#999 !important; font-size:12px; line-height:1.45; }
+.opp-column-accent .opp-card { border-color:#4a2026; }
+.opp-connector { display:grid; grid-template-rows:repeat(4,1fr); align-items:center; justify-items:center; color:#e4002b; font-size:18px; }
+.opp-caption { display:flex; justify-content:space-between; padding-top:13px; margin-top:13px; border-top:1px solid #292929; color:#777; font-size:10px; text-transform:uppercase; letter-spacing:.08em; }
+
+.ia-map { margin-top:90px; padding:44px; background:#f0f0ee; border:1px solid #dededb; }
+.ia-root { width:max-content; max-width:100%; margin:0 auto; padding:18px 28px; background:#050505; color:#fff; text-align:center; font-size:12px; letter-spacing:.06em; }
+.ia-root span { color:#e4002b; font-size:9px; letter-spacing:.12em; }
+.ia-line { width:1px; height:42px; margin:0 auto; background:#aaa; }
+.ia-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+.ia-node { min-height:130px; padding:20px; background:#fff; border:1px solid #d6d6d2; position:relative; }
+.ia-node.ia-primary { border-color:#e4002b; }
+.ia-node span { color:#e4002b; font-size:10px; }
+.ia-node strong { display:block; margin-top:22px; color:#111; font-size:15px; line-height:1.2; font-weight:500; }
+.ia-node em { display:block; margin-top:10px; color:#777; font-size:10px; font-style:normal; line-height:1.4; }
+.ia-detail-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:10px; }
+.ia-detail-grid > div { padding:18px; background:#e5e3de; }
+.ia-detail-grid b { display:block; margin-bottom:8px; color:#111; font-size:9px; letter-spacing:.1em; }
+.ia-detail-grid span { color:#666; font-size:11px; line-height:1.5; }
+
+/* Ensure every dark-section text role has an explicit readable color. */
+.ubs-dark .ubs-research-grid span, .ubs-dark .persona-number { color:#e4002b !important; }
+.ubs-dark .ubs-research-grid article:hover { background:#111 !important; }
+
+@media (max-width:900px) {
+  .opportunity-map { grid-template-columns:1fr; }
+  .opp-connector { display:none; }
+  .ia-grid { grid-template-columns:1fr 1fr; }
+  .ia-detail-grid { grid-template-columns:1fr; }
+  .ia-map { padding:24px; }
+}
+@media (max-width:600px) {
+  .opportunity-map { margin-top:55px; }
+  .opp-card { min-height:0; }
+  .opp-caption { display:block; line-height:1.6; }
+  .opp-caption span:last-child { display:block; }
+  .ia-map { margin-top:55px; padding:16px; }
+  .ia-grid { grid-template-columns:1fr; }
+  .ia-node { min-height:110px; }
+}
