@@ -1392,3 +1392,95 @@ a {
     display: none;
   }
 }
+
+
+/* =========================================================
+   UBS FINAL NAV + CURSOR — FORCE OVERRIDE
+========================================================= */
+
+.ubs-nav {
+  position: fixed !important;
+  inset: 0 0 auto 0 !important;
+  height: 74px !important;
+  min-height: 74px !important;
+  padding: 0 32px !important;
+  background: rgba(245,244,239,.96) !important;
+  color: #111 !important;
+  border-bottom: 1px solid rgba(17,17,17,.16) !important;
+  mix-blend-mode: normal !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  pointer-events: auto !important;
+}
+
+.ubs-nav-inner {
+  width: min(100%, 1440px) !important;
+  height: 74px !important;
+  min-height: 74px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 32px !important;
+}
+
+.ubs-logo {
+  color: #111 !important;
+  font-family: "Geist", Arial, sans-serif !important;
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  letter-spacing: -.04em !important;
+}
+
+.ubs-logo span { color: #e4002b !important; }
+
+.ubs-nav-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 28px !important;
+  color: #111 !important;
+  font-size: 11px !important;
+  letter-spacing: .07em !important;
+  text-transform: uppercase !important;
+}
+
+.ubs-nav-right a {
+  color: #111 !important;
+  opacity: .68 !important;
+  transition: opacity .25s ease !important;
+}
+
+.ubs-nav-right a:hover { opacity: 1 !important; }
+
+.tm-cursor {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 2147483647 !important;
+  pointer-events: none !important;
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  color: #e4002b !important;
+  background: #f5f4ef !important;
+  border: 1px solid #e4002b !important;
+  padding: 3px 5px !important;
+  font-family: "Geist", Arial, sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  letter-spacing: .06em !important;
+  white-space: nowrap !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  mix-blend-mode: normal !important;
+  transform: translate3d(-50%,-50%,0) !important;
+}
+
+@media (max-width: 700px) {
+  .ubs-nav { padding: 0 16px !important; }
+  .ubs-nav-inner { height: 68px !important; min-height: 68px !important; }
+  .ubs-nav-right { gap: 15px !important; font-size: 9px !important; }
+  .ubs-nav-right a:nth-child(2) { display: none !important; }
+  .tm-cursor { display: none !important; }
+}
