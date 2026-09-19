@@ -1,0 +1,1295 @@
+/* =========================================================
+   UBS CASE STUDY
+   Typography: SAME AS PORTFOLIO HOMEPAGE
+   Primary font: Geist
+   ========================================================= */
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+  --ubs-red: #e60000;
+
+  --ubs-black: #050505;
+  --ubs-white: #ffffff;
+
+  --ubs-off-white: #f5f5f3;
+  --ubs-grey: #777777;
+  --ubs-dark-grey: #555555;
+
+  --ubs-line: #dededb;
+
+  --ubs-max: 1440px;
+
+  --ubs-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+.ubs-page,
+.ubs-page * {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+body {
+  background: var(--ubs-white);
+  color: var(--ubs-black);
+
+  /* IMPORTANT:
+     Geist comes from your main portfolio stylesheet.
+     We do NOT import Inter / Manrope / Neue Montreal.
+  */
+
+  font-family: "Geist", sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.ubs-container {
+  width: min(calc(100% - 64px), var(--ubs-max));
+
+  margin-inline: auto;
+}
+
+/* =========================================================
+   NAV
+========================================================= */
+
+.ubs-nav {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 1000;
+
+  padding: 24px 32px;
+
+  color: #fff;
+
+  mix-blend-mode: difference;
+
+  pointer-events: none;
+}
+
+.ubs-nav-inner {
+  width: min(100%, var(--ubs-max));
+
+  margin-inline: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ubs-logo {
+  font-size: 16px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.04em;
+
+  pointer-events: auto;
+}
+
+.ubs-logo span {
+  color: var(--ubs-red);
+}
+
+.ubs-nav-right {
+  display: flex;
+
+  gap: 28px;
+
+  font-size: 12px;
+
+  pointer-events: auto;
+}
+
+.ubs-nav-right a {
+  position: relative;
+}
+
+.ubs-nav-right a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -5px;
+
+  width: 100%;
+  height: 1px;
+
+  background: currentColor;
+
+  transform: scaleX(0);
+
+  transform-origin: right;
+
+  transition: transform 0.5s var(--ubs-ease);
+}
+
+.ubs-nav-right a:hover::after {
+  transform: scaleX(1);
+
+  transform-origin: left;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.ubs-hero {
+  padding-top: 150px;
+
+  padding-bottom: 90px;
+
+  background: var(--ubs-white);
+}
+
+.ubs-hero-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid var(--ubs-line);
+}
+
+.ubs-kicker,
+.ubs-hero-year {
+  font-size: 11px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.11em;
+
+  text-transform: uppercase;
+}
+
+.ubs-hero-year {
+  color: var(--ubs-grey);
+}
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.ubs-hero-title {
+  position: relative;
+
+  padding-top: 55px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-end;
+}
+
+.ubs-hero-title h1 {
+  max-width: 1050px;
+
+  margin: 0;
+
+  font-family: "Geist", sans-serif;
+
+  font-size: clamp(76px, 12vw, 175px);
+
+  font-weight: 500;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.085em;
+}
+
+.ubs-hero-title h1 span {
+  display: block;
+
+  color: var(--ubs-red);
+}
+
+.ubs-hero-brand {
+  padding-bottom: 12px;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.03em;
+}
+
+/* =========================================================
+   HERO BOTTOM
+========================================================= */
+
+.ubs-hero-bottom {
+  margin-top: 75px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+.ubs-hero-description {
+  max-width: 580px;
+
+  margin: 0;
+
+  color: #444;
+
+  font-size: 18px;
+
+  line-height: 1.5;
+
+  letter-spacing: -0.015em;
+}
+
+.ubs-scroll {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: var(--ubs-grey);
+
+  font-size: 11px;
+
+  white-space: nowrap;
+}
+
+.ubs-scroll span {
+  width: 32px;
+  height: 1px;
+
+  background: currentColor;
+}
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.ubs-hero-image {
+  position: relative;
+
+  margin-top: 70px;
+
+  overflow: hidden;
+
+  background: #101010;
+}
+
+.ubs-hero-image img {
+  width: 100%;
+
+  min-height: 620px;
+
+  object-fit: cover;
+
+  transform: scale(1.02);
+
+  transition: transform 1.4s var(--ubs-ease);
+}
+
+/* =========================================================
+   META
+========================================================= */
+
+.ubs-meta {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  border-bottom: 1px solid var(--ubs-line);
+}
+
+.ubs-meta > div {
+  min-height: 95px;
+
+  padding: 24px 0;
+
+  border-right: 1px solid var(--ubs-line);
+}
+
+.ubs-meta > div:not(:first-child) {
+  padding-left: 24px;
+}
+
+.ubs-meta > div:last-child {
+  border-right: 0;
+}
+
+.ubs-meta span {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: var(--ubs-grey);
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
+}
+
+.ubs-meta strong {
+  display: block;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  letter-spacing: -0.01em;
+}
+
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
+
+.ubs-section {
+  padding: 155px 0;
+}
+
+.ubs-section-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(180px, 27%)
+    1fr;
+
+  gap: 70px;
+}
+
+.ubs-label,
+.ubs-small-label {
+  font-size: 10px;
+
+  font-weight: 500;
+
+  line-height: 1.3;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  color: var(--ubs-grey);
+}
+
+.ubs-section-content {
+  max-width: 780px;
+}
+
+.ubs-section-content h2 {
+  max-width: 800px;
+
+  margin: 0 0 45px;
+
+  font-family: "Geist", sans-serif;
+
+  font-size: clamp(46px, 6vw, 86px);
+
+  font-weight: 500;
+
+  line-height: 0.94;
+
+  letter-spacing: -0.065em;
+}
+
+.ubs-section-content p {
+  max-width: 650px;
+
+  margin: 0 0 24px;
+
+  color: #444;
+
+  font-size: 18px;
+
+  line-height: 1.6;
+
+  letter-spacing: -0.015em;
+}
+
+/* =========================================================
+   STATEMENT
+========================================================= */
+
+.ubs-statement {
+  padding: 185px 0;
+
+  background: var(--ubs-off-white);
+}
+
+.ubs-statement h2 {
+  max-width: 1120px;
+
+  margin-top: 30px;
+
+  font-family: "Geist", sans-serif;
+
+  font-size: clamp(54px, 8vw, 112px);
+
+  font-weight: 500;
+
+  line-height: 0.91;
+
+  letter-spacing: -0.075em;
+}
+
+.ubs-statement h2 span {
+  color: var(--ubs-red);
+}
+
+/* =========================================================
+   DARK
+========================================================= */
+
+.ubs-dark {
+  padding: 155px 0;
+
+  background: var(--ubs-black);
+
+  color: white;
+}
+
+.ubs-dark .ubs-section-content p {
+  color: #a5a5a5;
+}
+
+.ubs-dark .ubs-label {
+  color: #666;
+}
+
+/* =========================================================
+   RESEARCH
+========================================================= */
+
+.ubs-research-grid {
+  margin-top: 90px;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 1px;
+
+  background: #292929;
+}
+
+.ubs-research-grid article {
+  min-height: 310px;
+
+  padding: 40px;
+
+  background: var(--ubs-black);
+
+  transition: background 0.6s var(--ubs-ease);
+}
+
+.ubs-research-grid article:hover {
+  background: #111;
+}
+
+.ubs-research-grid span {
+  display: block;
+
+  margin-bottom: 95px;
+
+  color: var(--ubs-red);
+
+  font-size: 11px;
+}
+
+.ubs-research-grid h3 {
+  margin: 0 0 15px;
+
+  font-size: 24px;
+
+  font-weight: 500;
+
+  letter-spacing: -0.035em;
+}
+
+.ubs-research-grid p {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: #777;
+
+  font-size: 14px;
+
+  line-height: 1.55;
+}
+
+/* =========================================================
+   PERSONAS
+========================================================= */
+
+.ubs-personas {
+  margin-top: 90px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.ubs-persona {
+  min-height: 440px;
+
+  padding: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  border: 1px solid #252525;
+
+  background: #0b0b0b;
+
+  transition:
+    transform 0.7s var(--ubs-ease),
+    border-color 0.7s var(--ubs-ease);
+}
+
+.ubs-persona:hover {
+  transform: translateY(-8px);
+
+  border-color: #555;
+}
+
+.persona-number {
+  color: var(--ubs-red);
+
+  font-size: 11px;
+}
+
+.ubs-persona small {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: #666;
+
+  font-size: 9px;
+
+  letter-spacing: 0.12em;
+}
+
+.ubs-persona h3 {
+  max-width: 350px;
+
+  margin: 0 0 22px;
+
+  font-family: "Geist", sans-serif;
+
+  font-size: 38px;
+
+  font-weight: 500;
+
+  line-height: 0.94;
+
+  letter-spacing: -0.055em;
+}
+
+.ubs-persona p {
+  max-width: 360px;
+
+  margin: 0;
+
+  color: #777;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   INSIGHTS
+========================================================= */
+
+.ubs-insights {
+  margin-top: 70px;
+
+  border-top: 1px solid var(--ubs-line);
+}
+
+.ubs-insights > div {
+  display: grid;
+
+  grid-template-columns: 70px 1fr;
+
+  gap: 30px;
+
+  padding: 27px 0;
+
+  border-bottom: 1px solid var(--ubs-line);
+}
+
+.ubs-insights span {
+  color: var(--ubs-red);
+
+  font-size: 11px;
+}
+
+.ubs-insights p {
+  max-width: 750px;
+
+  margin: 0;
+
+  color: var(--ubs-black);
+
+  font-size: 25px;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.035em;
+}
+
+/* =========================================================
+   LARGE IMAGES
+========================================================= */
+
+.ubs-large-image {
+  margin-top: 90px;
+
+  overflow: hidden;
+}
+
+.ubs-large-image img {
+  width: 100%;
+
+  transition: transform 1.2s var(--ubs-ease);
+}
+
+.ubs-large-image:hover img {
+  transform: scale(1.015);
+}
+
+.ubs-large-image figcaption,
+.ubs-product-image figcaption,
+.ubs-screen-grid figcaption {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding-top: 13px;
+
+  margin-top: 13px;
+
+  border-top: 1px solid var(--ubs-line);
+
+  color: var(--ubs-grey);
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+}
+
+/* =========================================================
+   VISION
+========================================================= */
+
+.ubs-vision {
+  padding: 190px 0;
+
+  background: var(--ubs-black);
+
+  color: white;
+}
+
+.ubs-vision h2 {
+  max-width: 1100px;
+
+  margin-top: 35px;
+
+  font-family: "Geist", sans-serif;
+
+  font-size: clamp(58px, 9vw, 130px);
+
+  font-weight: 500;
+
+  line-height: 0.88;
+
+  letter-spacing: -0.08em;
+}
+
+.ubs-vision h2 span {
+  color: var(--ubs-red);
+}
+
+/* =========================================================
+   PRODUCT
+========================================================= */
+
+.ubs-product {
+  padding: 155px 0;
+
+  background: var(--ubs-white);
+}
+
+.ubs-product-intro {
+  display: grid;
+
+  grid-template-columns:
+    27%
+    1fr;
+
+  gap: 70px;
+}
+
+.ubs-product-intro h2 {
+  max-width: 850px;
+
+  margin: 0 0 35px;
+
+  font-family: "Geist", sans-serif;
+
+  font-size: clamp(48px, 6vw, 88px);
+
+  font-weight: 500;
+
+  line-height: 0.92;
+
+  letter-spacing: -0.065em;
+}
+
+.ubs-product-intro p {
+  max-width: 600px;
+
+  color: #555;
+
+  font-size: 18px;
+
+  line-height: 1.55;
+}
+
+.ubs-product-image {
+  margin-top: 100px;
+
+  overflow: hidden;
+}
+
+.ubs-product-image img {
+  background: #f0f0ee;
+}
+
+/* =========================================================
+   PRODUCT SCREENS
+========================================================= */
+
+.ubs-screen-section {
+  padding: 0 0 155px;
+}
+
+.ubs-screen-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+
+  margin-top: 20px;
+}
+
+.ubs-screen-grid figure {
+  overflow: hidden;
+
+  background: #f0f0ee;
+}
+
+.ubs-screen-grid img {
+  transition: transform 1s var(--ubs-ease);
+}
+
+.ubs-screen-grid figure:hover img {
+  transform: scale(1.012);
+}
+
+/* =========================================================
+   OUTCOME
+========================================================= */
+
+.ubs-outcome {
+  padding: 155px 0;
+
+  background: var(--ubs-off-white);
+}
+
+.ubs-outcomes {
+  margin-top: 90px;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 1px;
+
+  background: var(--ubs-line);
+}
+
+.ubs-outcomes > div {
+  min-height: 250px;
+
+  padding: 35px;
+
+  background: var(--ubs-off-white);
+}
+
+.ubs-outcomes strong {
+  display: block;
+
+  margin-bottom: 70px;
+
+  font-family: "Geist", sans-serif;
+
+  font-size: 55px;
+
+  font-weight: 500;
+
+  line-height: 0.8;
+
+  letter-spacing: -0.06em;
+}
+
+.ubs-outcomes p {
+  max-width: 220px;
+
+  margin: 0;
+
+  color: #666;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   REFLECTION
+========================================================= */
+
+.ubs-reflection {
+  padding-bottom: 230px;
+}
+
+.ubs-reflection-content {
+  max-width: 850px;
+}
+
+.ubs-reflection-content h2 {
+  margin: 0 0 55px;
+
+  font-family: "Geist", sans-serif;
+
+  font-size: clamp(48px, 6vw, 90px);
+
+  font-weight: 500;
+
+  line-height: 0.92;
+
+  letter-spacing: -0.065em;
+}
+
+.ubs-reflection-content p {
+  max-width: 720px;
+
+  margin: 0 0 28px;
+
+  color: #444;
+
+  font-size: 20px;
+
+  line-height: 1.55;
+}
+
+/* =========================================================
+   NEXT PROJECT
+========================================================= */
+
+.ubs-next {
+  padding: 105px 0;
+
+  background: var(--ubs-red);
+
+  color: white;
+}
+
+.ubs-next-top {
+  margin-bottom: 70px;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+.ubs-next-content {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.ubs-next h2 {
+  margin: 0;
+
+  font-family: "Geist", sans-serif;
+
+  font-size: clamp(75px, 13vw, 185px);
+
+  font-weight: 500;
+
+  line-height: 0.78;
+
+  letter-spacing: -0.085em;
+}
+
+.ubs-next a {
+  padding-bottom: 7px;
+
+  border-bottom: 1px solid white;
+
+  font-size: 13px;
+
+  transition: opacity 0.3s ease;
+}
+
+.ubs-next a:hover {
+  opacity: 0.6;
+}
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.ubs-reveal {
+  opacity: 0;
+
+  transform: translateY(45px);
+
+  transition:
+    opacity 0.9s ease,
+    transform 1s var(--ubs-ease);
+}
+
+.ubs-reveal.is-visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+  color: white;
+
+  background: var(--ubs-red);
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .ubs-container {
+    width: min(calc(100% - 40px), var(--ubs-max));
+  }
+
+  .ubs-nav {
+    padding: 20px;
+  }
+
+  .ubs-section-grid,
+  .ubs-product-intro {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .ubs-personas {
+    grid-template-columns: 1fr;
+  }
+
+  .ubs-persona {
+    min-height: 330px;
+  }
+
+  .ubs-outcomes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ubs-hero-title {
+    display: block;
+  }
+
+  .ubs-hero-brand {
+    margin-top: 35px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .ubs-container {
+    width: calc(100% - 32px);
+  }
+
+  .ubs-nav {
+    padding: 18px 16px;
+  }
+
+  .ubs-nav-right {
+    gap: 14px;
+
+    font-size: 10px;
+  }
+
+  .ubs-nav-right a:nth-child(2) {
+    display: none;
+  }
+
+  .ubs-hero {
+    padding-top: 115px;
+
+    padding-bottom: 60px;
+  }
+
+  .ubs-hero-title {
+    padding-top: 40px;
+  }
+
+  .ubs-hero-title h1 {
+    font-size: clamp(60px, 17vw, 90px);
+  }
+
+  .ubs-hero-bottom {
+    margin-top: 45px;
+
+    display: block;
+  }
+
+  .ubs-hero-description {
+    font-size: 16px;
+  }
+
+  .ubs-scroll {
+    margin-top: 35px;
+  }
+
+  .ubs-hero-image {
+    margin-top: 50px;
+  }
+
+  .ubs-hero-image img {
+    min-height: 430px;
+  }
+
+  .ubs-meta {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ubs-meta > div {
+    min-height: 80px;
+
+    padding: 20px 0;
+  }
+
+  .ubs-meta > div:not(:first-child) {
+    padding-left: 15px;
+  }
+
+  .ubs-meta > div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .ubs-meta > div:nth-child(3),
+  .ubs-meta > div:nth-child(4) {
+    border-top: 1px solid var(--ubs-line);
+  }
+
+  .ubs-section,
+  .ubs-dark,
+  .ubs-product,
+  .ubs-outcome {
+    padding: 100px 0;
+  }
+
+  .ubs-section-content h2,
+  .ubs-product-intro h2,
+  .ubs-reflection-content h2 {
+    font-size: 48px;
+  }
+
+  .ubs-section-content p,
+  .ubs-product-intro p {
+    font-size: 16px;
+  }
+
+  .ubs-statement,
+  .ubs-vision {
+    padding: 120px 0;
+  }
+
+  .ubs-statement h2 {
+    font-size: 52px;
+  }
+
+  .ubs-vision h2 {
+    font-size: 56px;
+  }
+
+  .ubs-research-grid {
+    grid-template-columns: 1fr;
+
+    margin-top: 60px;
+  }
+
+  .ubs-research-grid article {
+    min-height: 240px;
+
+    padding: 30px;
+  }
+
+  .ubs-research-grid span {
+    margin-bottom: 55px;
+  }
+
+  .ubs-insights {
+    margin-top: 50px;
+  }
+
+  .ubs-insights > div {
+    grid-template-columns: 40px 1fr;
+
+    gap: 15px;
+  }
+
+  .ubs-insights p {
+    font-size: 20px;
+  }
+
+  .ubs-large-image {
+    margin-top: 55px;
+  }
+
+  .ubs-screen-section {
+    padding-bottom: 100px;
+  }
+
+  .ubs-screen-grid {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .ubs-outcomes {
+    grid-template-columns: 1fr;
+
+    margin-top: 60px;
+  }
+
+  .ubs-outcomes > div {
+    min-height: 190px;
+  }
+
+  .ubs-outcomes strong {
+    margin-bottom: 50px;
+  }
+
+  .ubs-reflection {
+    padding-bottom: 130px;
+  }
+
+  .ubs-reflection-content p {
+    font-size: 18px;
+  }
+
+  .ubs-next {
+    padding: 80px 0;
+  }
+
+  .ubs-next-content {
+    display: block;
+  }
+
+  .ubs-next h2 {
+    font-size: 76px;
+  }
+
+  .ubs-next a {
+    display: inline-block;
+
+    margin-top: 45px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
