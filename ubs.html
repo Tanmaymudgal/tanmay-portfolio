@@ -7,11 +7,12 @@
     <title>UBS — Client Intelligence Platform</title>
 
     <!-- Use the SAME Geist font files as your homepage -->
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="ubs.css" />
   </head>
 
   <body>
+    <div class="tm-cursor" aria-hidden="true">TM—</div>
     <!-- =====================================================
        NAV
   ====================================================== -->
@@ -635,6 +636,16 @@
           heroImage.style.transform = `translateY(${scrollY * 0.08}px) scale(1.02)`;
         }
       });
+    </script>
+  <script>
+      (() => {
+        const cursor = document.querySelector(".tm-cursor");
+        if (!cursor) return;
+        let x = innerWidth / 2, y = innerHeight / 2, tx = x, ty = y;
+        document.addEventListener("mousemove", e => { tx = e.clientX; ty = e.clientY; cursor.style.opacity = "1"; }, { passive: true });
+        const animate = () => { x += (tx - x) * 0.14; y += (ty - y) * 0.14; cursor.style.transform = `translate3d(${x}px,${y}px,0) translate(-50%,-50%)`; requestAnimationFrame(animate); };
+        animate();
+      })();
     </script>
   </body>
 </html>
