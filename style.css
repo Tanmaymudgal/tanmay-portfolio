@@ -1,11 +1,3 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap");
-
-@font-face {
-  font-family: "Neue Montreal";
-  src: local("Neue Montreal");
-  font-display: swap;
-}
-
 :root {
   --paper: #f2f0eb;
   --ink: #111111;
@@ -4371,4 +4363,47 @@ body.cursor-hover .tm-cursor {
   .process-list > div {
     transition: none !important;
   }
+}
+
+/* =========================================================
+   HOMEPAGE SPACING SYSTEM — canonical rules
+========================================================= */
+.hero { min-height: calc(100svh - 68px); padding: 28px var(--pad) 24px; }
+.section-head { padding: 16px 0 24px; }
+.project { min-height: auto; padding: 38px 0 64px; gap: 28px; }
+.project-info { min-height: 0; }
+.project-type { margin-bottom: 30px; }
+.project-title { margin: 16px 0 18px; }
+.project-description { max-width: 360px; }
+.project-link { margin-top: 44px; }
+.project-visual { min-height: 0; aspect-ratio: 4 / 3; }
+.project + .project { padding-top: 64px; }
+.capability { min-height: 240px; }
+.capability h3 { margin-top: 64px; }
+.about { padding-bottom: 112px; }
+.process { padding-bottom: 96px; }
+.contact { min-height: auto; }
+.contact-main { min-height: 0; padding: 112px 0 96px; }
+
+@media (max-width: 900px) {
+  .project { padding-bottom: 56px; }
+  .project + .project { padding-top: 56px; }
+  .project-info { min-height: 0; }
+  .project-visual { min-height: 0; aspect-ratio: 4 / 3; }
+  .capability { min-height: 220px; }
+}
+
+@media (max-width: 600px) {
+  .hero { min-height: 82svh; padding: 25px 20px 28px; }
+  .section-head { padding: 14px 20px 20px; }
+  .project { padding: 28px 20px 48px; }
+  .project + .project { padding-top: 48px; }
+  .project-info { min-height: 0; margin-bottom: 28px; }
+  .project-link { margin-top: 32px; }
+  .project-visual { min-height: 0; aspect-ratio: 4 / 3; }
+  .capability { min-height: 150px; }
+  .capability h3 { margin-top: 44px; }
+  .about { padding-bottom: 72px; }
+  .process { padding-bottom: 64px; }
+  .contact-main { padding: 72px 20px 64px; }
 }
