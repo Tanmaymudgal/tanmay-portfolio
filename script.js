@@ -326,3 +326,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { passive: true });
   }
 });
+
+
+/* Disable legacy TM cursor */
+(() => {
+  const legacyCursor = document.querySelector(".tm-cursor");
+  if (legacyCursor) {
+    legacyCursor.remove();
+  }
+})();
