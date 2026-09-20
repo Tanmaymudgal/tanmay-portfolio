@@ -4675,3 +4675,21 @@ h1 span {
 
 
 
+
+/* EMERGENCY CURSOR HIDE */
+html, body, body * {
+  cursor: default !important;
+}
+
+.tm-cursor,
+.tm-cursor-final,
+#tm-cursor-final,
+[class*="tm-cursor"],
+[id*="tm-cursor"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+}
