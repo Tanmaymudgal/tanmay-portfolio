@@ -1571,3 +1571,19 @@
     margin: -30px -30px 24px;
   }
 }
+
+/* Research cards — white surfaces */
+.ubs-research-grid article,
+.ubs-research-grid article h3,
+.ubs-research-grid article p {
+  background: #fff;
+}
+.ubs-research-grid article {
+  color: #101010;
+}
+.ubs-research-grid article h3 {
+  color: #101010;
+}
+.ubs-research-grid article p {
+  color: #555;
+}
