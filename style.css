@@ -4761,3 +4761,12 @@ body.cursor-hover .tm-cursor {
     padding-right: 18px;
   }
 }
+
+
+/* FINAL CURSOR CLEANUP — remove legacy cursor from navbar/site */
+.tm-cursor {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
