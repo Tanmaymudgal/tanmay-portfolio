@@ -1587,3 +1587,287 @@
 .ubs-research-grid article p {
   color: #555;
 }
+
+
+/* =========================================================
+   VISUAL PASS — EDITORIAL CASE STUDY REFINEMENT
+========================================================= */
+:root {
+  --ubs-soft-line: rgba(16,16,16,.12);
+  --ubs-red-soft: rgba(228,0,43,.08);
+}
+
+/* Stronger hero hierarchy */
+.ubs-hero {
+  position: relative;
+  overflow: hidden;
+}
+.ubs-hero::after {
+  content: "01";
+  position: absolute;
+  right: 4vw;
+  top: 31%;
+  font-family: "Geist", sans-serif;
+  font-size: clamp(120px, 20vw, 300px);
+  line-height: .7;
+  letter-spacing: -.09em;
+  color: rgba(16,16,16,.045);
+  pointer-events: none;
+}
+.ubs-hero-title h1 span {
+  display: block;
+  color: #777;
+}
+.ubs-hero-brand {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(72px, 11vw, 170px);
+  letter-spacing: -.09em;
+}
+
+/* Make product imagery feel like presented artifacts */
+.ubs-hero-image,
+.ubs-product-image,
+.ubs-large-image {
+  position: relative;
+  background: #ecebe7;
+}
+.ubs-hero-image::before,
+.ubs-product-image::before,
+.ubs-large-image::before {
+  content: "UBS / CLIENT INTELLIGENCE";
+  position: absolute;
+  z-index: 2;
+  left: 18px;
+  top: 16px;
+  padding: 6px 8px;
+  background: rgba(245,244,239,.9);
+  border: 1px solid rgba(16,16,16,.12);
+  color: #555;
+  font: 9px/1 "Geist", sans-serif;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+.ubs-hero-image img,
+.ubs-product-image img,
+.ubs-large-image img {
+  display: block;
+  transition: transform 1.1s cubic-bezier(.2,.7,.2,1), filter .6s ease;
+}
+.ubs-hero-image:hover img,
+.ubs-product-image:hover img,
+.ubs-large-image:hover img {
+  transform: scale(1.018);
+  filter: contrast(1.02);
+}
+
+/* Editorial section rhythm */
+.ubs-section {
+  position: relative;
+}
+.ubs-section + .ubs-section {
+  border-top: 1px solid var(--ubs-soft-line);
+}
+.ubs-section-grid {
+  position: relative;
+}
+.ubs-label {
+  position: relative;
+}
+.ubs-label::after {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 2px;
+  margin-top: 16px;
+  background: var(--ubs-red);
+}
+
+/* Research cards — white, but more tactile */
+.ubs-research-grid {
+  box-shadow: 0 0 0 1px var(--ubs-soft-line);
+}
+.ubs-research-grid article {
+  position: relative;
+  min-height: 340px;
+  padding: 34px;
+  overflow: hidden;
+  transition: transform .5s var(--ubs-ease), background .35s ease;
+}
+.ubs-research-grid article::after {
+  content: "↗";
+  position: absolute;
+  right: 28px;
+  top: 26px;
+  color: #aaa;
+  font-size: 18px;
+  transition: color .3s ease, transform .4s ease;
+}
+.ubs-research-grid article:hover {
+  transform: translateY(-5px);
+  background: #f7f6f2 !important;
+}
+.ubs-research-grid article:hover::after {
+  color: var(--ubs-red);
+  transform: translate(3px,-3px);
+}
+.ubs-research-grid h3 {
+  font-size: clamp(28px, 3vw, 42px);
+  letter-spacing: -.055em;
+}
+.ubs-research-grid p {
+  max-width: 360px;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+/* Persona cards read as individual case-study artifacts */
+.ubs-personas {
+  gap: 1px;
+  background: #292929;
+}
+.ubs-persona {
+  position: relative;
+  background: #101010;
+  border: 0;
+  transition: background .45s ease, transform .45s var(--ubs-ease);
+}
+.ubs-persona:hover {
+  background: #151515;
+  transform: translateY(-4px);
+}
+.persona-number {
+  font-size: 64px !important;
+  letter-spacing: -.07em;
+}
+
+/* Findings become a stronger editorial list */
+.ubs-insights > div {
+  position: relative;
+  padding: 22px 0;
+  border-top: 1px solid var(--ubs-soft-line);
+  transition: padding-left .4s ease;
+}
+.ubs-insights > div:last-child {
+  border-bottom: 1px solid var(--ubs-soft-line);
+}
+.ubs-insights > div:hover {
+  padding-left: 12px;
+}
+.ubs-insights > div:hover span {
+  color: var(--ubs-red);
+}
+
+/* Dark synthesis gets a clearer visual system */
+.opportunity-map {
+  position: relative;
+}
+.opp-card {
+  border-color: rgba(255,255,255,.13);
+}
+.opp-card:hover {
+  border-color: rgba(228,0,43,.65);
+}
+.opp-column-accent .opp-card {
+  background: linear-gradient(135deg, #0d0d0d 0%, #171013 100%);
+}
+
+/* IA feels like an actual product architecture diagram */
+.ia-map {
+  box-shadow: 0 18px 60px rgba(0,0,0,.06);
+}
+.ia-node {
+  transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+}
+.ia-node:hover {
+  transform: translateY(-4px);
+  border-color: #999;
+  box-shadow: 0 12px 30px rgba(0,0,0,.07);
+}
+.ia-node.ia-primary:hover {
+  border-color: var(--ubs-red);
+}
+
+/* Screen gallery */
+.ubs-screen-grid figure {
+  position: relative;
+  background: #eeece8;
+  border: 1px solid rgba(16,16,16,.08);
+  overflow: hidden;
+}
+.ubs-screen-grid figure::before {
+  content: "VIEW";
+  position: absolute;
+  z-index: 2;
+  right: 14px;
+  top: 14px;
+  padding: 5px 7px;
+  background: rgba(245,244,239,.88);
+  color: #555;
+  font: 9px/1 "Geist", sans-serif;
+  letter-spacing: .1em;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity .3s ease, transform .3s ease;
+}
+.ubs-screen-grid figure:hover::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+.ubs-screen-grid figcaption {
+  background: #f5f4ef;
+  padding: 13px 14px 0;
+}
+
+/* Outcome section gets stronger numerical hierarchy */
+.ubs-outcomes > div {
+  position: relative;
+  transition: background .35s ease;
+}
+.ubs-outcomes > div:hover {
+  background: #fff;
+}
+.ubs-outcomes strong {
+  font-size: clamp(48px, 5vw, 72px);
+}
+.ubs-outcomes > div::after {
+  content: "↗";
+  position: absolute;
+  right: 22px;
+  top: 20px;
+  color: #bbb;
+}
+
+/* Next-project close */
+.ubs-next {
+  position: relative;
+  overflow: hidden;
+}
+.ubs-next::after {
+  content: "NEXT";
+  position: absolute;
+  right: -20px;
+  bottom: -60px;
+  font-family: "Geist", sans-serif;
+  font-size: clamp(150px, 28vw, 420px);
+  line-height: .7;
+  letter-spacing: -.1em;
+  color: rgba(255,255,255,.08);
+  pointer-events: none;
+}
+.ubs-next-content {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 900px) {
+  .ubs-hero::after { display: none; }
+  .ubs-research-grid article { min-height: 280px; }
+}
+@media (max-width: 600px) {
+  .ubs-hero-brand { font-size: 82px; }
+  .ubs-hero-image::before,
+  .ubs-product-image::before,
+  .ubs-large-image::before { display: none; }
+  .ubs-research-grid article { min-height: 230px; }
+}
