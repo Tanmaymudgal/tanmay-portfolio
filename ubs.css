@@ -1871,3 +1871,66 @@
   .ubs-large-image::before { display: none; }
   .ubs-research-grid article { min-height: 230px; }
 }
+
+
+/* =========================================================
+   FINAL RESEARCH + PERSONA CLEANUP
+========================================================= */
+
+/* Research methods: restrained UBS palette */
+.ubs-research-grid article {
+  background: #f5f4ef !important;
+  color: #101010 !important;
+  border-top: 2px solid transparent;
+}
+
+.ubs-research-grid article:nth-child(1),
+.ubs-research-grid article:nth-child(2),
+.ubs-research-grid article:nth-child(3),
+.ubs-research-grid article:nth-child(4) {
+  border-top-color: #e4002b;
+}
+
+.ubs-research-grid article span {
+  color: #e4002b !important;
+}
+
+.ubs-research-grid article h3 {
+  color: #101010 !important;
+}
+
+.ubs-research-grid article p {
+  color: #555 !important;
+}
+
+.ubs-research-grid article:hover {
+  background: #e4002b !important;
+  color: #fff !important;
+}
+
+.ubs-research-grid article:hover span,
+.ubs-research-grid article:hover h3,
+.ubs-research-grid article:hover p {
+  color: #fff !important;
+}
+
+/* Personas: no placeholder/interface imagery */
+.ubs-persona {
+  min-height: 390px;
+}
+
+.persona-copy {
+  margin-top: 28px;
+}
+
+@media (max-width: 900px) {
+  .ubs-persona {
+    min-height: 330px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ubs-persona {
+    min-height: 300px;
+  }
+}
