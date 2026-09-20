@@ -173,39 +173,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-console.log("CURSOR BLOCK REACHED");
-
-/* TM— registration cursor */
-(() => {
-  const cursor = document.querySelector(".tm-cursor");
-
-  if (!cursor) return;
-
-  let currentX = window.innerWidth / 2;
-  let currentY = window.innerHeight / 2;
-  let mouseX = currentX;
-  let mouseY = currentY;
-
-  function moveCursor(event) {
-    mouseX = event.clientX;
-    mouseY = event.clientY;
-    cursor.style.opacity = "1";
-  }
-
-  document.addEventListener("mousemove", moveCursor, { passive: true });
-
-  function animateCursor() {
-    currentX += (mouseX - currentX) * 0.14;
-    currentY += (mouseY - currentY) * 0.14;
-
-    cursor.style.transform =
-      `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%)`;
-
-    requestAnimationFrame(animateCursor);
-  }
-
-  animateCursor();
-})();
 /* Visitor Book */
 document.addEventListener("DOMContentLoaded", () => {
   const openButton = document.querySelector(".visitor-book-open");
@@ -307,31 +274,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-/* Homepage interaction layer */
-document.addEventListener("DOMContentLoaded", () => {
-  const cursor = document.querySelector(".tm-cursor");
-  if (cursor) {
-    document.querySelectorAll("a, button, .project").forEach((el) => {
-      el.addEventListener("mouseenter", () => document.body.classList.add("cursor-hover"));
-      el.addEventListener("mouseleave", () => document.body.classList.remove("cursor-hover"));
-    });
-  }
-
-  const hero = document.querySelector(".hero h1");
-  if (hero && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    window.addEventListener("scroll", () => {
-      const y = Math.min(window.scrollY * 0.08, 28);
-      hero.style.transform = "translate3d(0," + y + "px,0)";
-    }, { passive: true });
-  }
-});
-
-
-/* Disable legacy TM cursor */
-(() => {
-  const legacyCursor = document.querySelector(".tm-cursor");
-  if (legacyCursor) {
-    legacyCursor.remove();
-  }
-})();
