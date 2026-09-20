@@ -9,6 +9,45 @@ document.addEventListener("DOMContentLoaded", () => {
   // --------------------------------
   const archiveList = document.querySelector("#visitor-index-list");
   const archiveCount = document.querySelector("#visitor-count");
+  const seeMoreButton = document.querySelector(".visitor-see-more");
+
+  let visitorEntries = [];
+  let visibleVisitorEntries = 5;
+
+  function renderVisitorArchive() {
+    if (!archiveList) return;
+
+    archiveList.innerHTML = "";
+
+    const visibleEntries = visitorEntries.slice(0, visibleVisitorEntries);
+
+    visibleEntries.forEach((entry, index) => {
+      const row = document.createElement("button");
+
+      row.type = "button";
+      row.className = "visitor-index-entry";
+
+      const number = String(index + 1).padStart(3, "0");
+
+      row.innerHTML = `
+        <span>${number}</span>
+        <span class="visitor-index-initials">${entry.initials}</span>
+      `;
+
+      archiveList.appendChild(row);
+    });
+
+    if (archiveCount) {
+      archiveCount.textContent =
+        String(visitorEntries.length).padStart(3, "0") + " ENTRIES";
+    }
+
+    if (seeMoreButton) {
+      const hasMore = visibleVisitorEntries < visitorEntries.length;
+      seeMoreButton.hidden = !hasMore;
+      seeMoreButton.setAttribute("aria-expanded", hasMore ? "false" : "true");
+    }
+  }
 
   async function loadVisitorArchive() {
     if (!archiveList) return;
@@ -19,46 +58,25 @@ document.addEventListener("DOMContentLoaded", () => {
       .eq("approved", true)
       .not("initials", "is", null)
       .order("created_at", { ascending: false })
-      .limit(5);
+      .limit(100);
+
     if (error) {
       console.error("Visitor archive error:", error);
       return;
     }
 
-    archiveList.innerHTML = "";
+    visitorEntries = data || [];
+    visibleVisitorEntries = Math.min(5, visitorEntries.length);
 
-    if (!data || data.length === 0) {
-      if (archiveCount) {
-        archiveCount.textContent = "000 ENTRIES";
-      }
-      return;
-    }
-
-    if (archiveCount) {
-      archiveCount.textContent =
-        String(data.length).padStart(3, "0") + " ENTRIES";
-    }
-
-    data.forEach((entry, index) => {
-      const row = document.createElement("button");
-
-      row.type = "button";
-      row.className = "visitor-index-entry";
-
-      const number = String(index + 1).padStart(3, "0");
-
-      row.innerHTML = `
-        <span>${number}</span>
-        <span class="visitor-index-initials">
-          ${entry.initials}
-        </span>
-      `;
-
-      archiveList.appendChild(row);
-    });
+    renderVisitorArchive();
   }
 
+
   loadVisitorArchive();
+  seeMoreButton?.addEventListener("click", () => {
+    visibleVisitorEntries += 5;
+    renderVisitorArchive();
+  });
   // --------------------------------
   // Smooth anchor scrolling
   // --------------------------------
