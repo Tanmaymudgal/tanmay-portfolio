@@ -4770,3 +4770,14 @@ body.cursor-hover .tm-cursor {
   opacity: 0 !important;
   pointer-events: none !important;
 }
+
+
+/* FINAL CURSOR CLEANUP */
+.tm-cursor,
+.tm-cursor-final,
+#tm-cursor-final {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
