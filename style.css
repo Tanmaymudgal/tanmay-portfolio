@@ -1037,29 +1037,6 @@ h1 span {
   }
 }
 
-/* ================================
-   TM— CURSOR / REGISTRATION MARK
-================================ */
-
-.tm-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  pointer-events: none;
-  font-family: "Geist", sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  color: var(--ink);
-  opacity: 0;
-  transform: translate3d(-50%, -50%, 0);
-  transition: opacity 0.2s ease;
-  mix-blend-mode: difference;
-}
-
-body.cursor-active .tm-cursor {
-  opacity: 1;
-}
 
 /* ================================
    PROJECT HOVER MOTION
@@ -1088,10 +1065,6 @@ body.cursor-active .tm-cursor {
 
 /* Keep mobile static */
 @media (max-width: 600px) {
-  .tm-cursor {
-    display: none;
-  }
-
   .project:hover {
     transform: none;
   }
@@ -1102,10 +1075,6 @@ body.cursor-active .tm-cursor {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .tm-cursor {
-    display: none;
-  }
-
   .project,
   .project-visual img {
     transition: none;
@@ -1120,15 +1089,6 @@ body.cursor-active .tm-cursor {
   }
 }
 
-/* TM— visibility fix */
-.tm-cursor {
-  color: var(--accent) !important;
-  mix-blend-mode: normal !important;
-  font-weight: 600;
-  background: var(--paper);
-  padding: 3px 5px;
-  border: 1px solid var(--accent);
-}
 
 /* Editorial signature */
 .portfolio-signature {
@@ -1668,20 +1628,6 @@ a,
 button,
 input,
 textarea,
-select {
-  cursor: none !important;
-}
-
-.tm-cursor {
-  pointer-events: none;
-}
-
-*,
-*::before,
-*::after {
-  cursor: none !important;
-}
-
 /* Visitor Book — editorial entry */
 .visitor-entry-modal {
   position: fixed;
@@ -2211,10 +2157,7 @@ select {
   }
 }
 
-/* UBS case-study cursor */
-.case-study-page .tm-cursor {
-  display: block !important;
-}
+
 /* =========================================================
    UBS — PROBLEM SECTION
    ========================================================= */
@@ -3857,20 +3800,6 @@ body {
   color: var(--muted);
 }
 
-/* CURSOR */
-
-.tm-cursor {
-  position: fixed;
-  z-index: 9999;
-  pointer-events: none;
-  font-family: "Geist", Arial, sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.05em;
-  color: var(--ink);
-  opacity: 0;
-  white-space: nowrap;
-  mix-blend-mode: difference;
-}
 
 /* RESPONSIVE */
 
@@ -4318,25 +4247,7 @@ h1 span {
   letter-spacing: .13em;
 }
 
-.tm-cursor {
-  z-index: 99999;
-  font-size: 9px;
-  letter-spacing: .12em;
-  padding: 4px 6px;
-  border: 1px solid var(--accent);
-  background: var(--paper);
-  color: var(--accent) !important;
-  transition: opacity .2s ease, background .2s ease, color .2s ease;
-}
-
-body.cursor-hover .tm-cursor {
-  background: var(--accent);
-  color: #fff !important;
-}
-
-@media (max-width: 900px) {
-  .hero::after { display: none; }
-  .project { min-height: auto; }
+.project { min-height: auto; }
   .project-info { min-height: 500px; }
   .project-visual { min-height: 480px; }
 }
@@ -4763,21 +4674,4 @@ body.cursor-hover .tm-cursor {
 }
 
 
-/* FINAL CURSOR CLEANUP — remove legacy cursor from navbar/site */
-.tm-cursor {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-}
 
-
-/* FINAL CURSOR CLEANUP */
-.tm-cursor,
-.tm-cursor-final,
-#tm-cursor-final {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-}
