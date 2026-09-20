@@ -1914,6 +1914,18 @@
   color: #fff !important;
 }
 
+/* Competitive analysis — black variant */
+.ubs-research-grid article:nth-child(3) {
+  background: #101010 !important;
+  color: #fff !important;
+}
+
+.ubs-research-grid article:nth-child(3) span,
+.ubs-research-grid article:nth-child(3) h3,
+.ubs-research-grid article:nth-child(3) p {
+  color: #fff !important;
+}
+
 /* Personas: no placeholder/interface imagery */
 .ubs-persona {
   min-height: 390px;
