@@ -2200,3 +2200,30 @@
     border-bottom: 0;
   }
 }
+
+
+/* =========================================================
+   RESEARCH 03 — REMOVE LEGACY DARK-CARD OVERRIDE
+========================================================= */
+.ubs-research-grid article:nth-child(3),
+.ubs-research-grid article:nth-child(3):hover {
+  background: transparent !important;
+  color: #101010 !important;
+  border-top: 0 !important;
+}
+
+.ubs-research-grid article:nth-child(3) span {
+  color: #e4002b !important;
+}
+
+.ubs-research-grid article:nth-child(3) h3 {
+  color: #101010 !important;
+}
+
+.ubs-research-grid article:nth-child(3) p {
+  color: #666 !important;
+}
+
+.ubs-research-grid article:nth-child(3)::before {
+  color: rgba(16,16,16,.045) !important;
+}
