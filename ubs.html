@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="ubs.css" />
   </head>
 
-  <body>\n    <div class="tm-cursor" aria-hidden="true"><span>TM</span></div>
+  <body>
+    <div class="tm-cursor" aria-hidden="true">TM</div>
     
 <!-- =====================================================
        NAV
@@ -652,6 +653,22 @@
         document.addEventListener("mousemove", e => { tx = e.clientX; ty = e.clientY; cursor.style.opacity = "1"; }, { passive: true });
         const animate = () => { x += (tx - x) * 0.14; y += (ty - y) * 0.14; cursor.style.transform = `translate3d(${x}px,${y}px,0) translate(-50%,-50%)`; requestAnimationFrame(animate); };
         animate();
+      })();
+    </script>
+    <script>
+      (() => {
+        const cursor = document.querySelector(".tm-cursor");
+        if (!cursor || window.matchMedia("(max-width: 700px)").matches) return;
+        let x = window.innerWidth / 2, y = window.innerHeight / 2;
+        let tx = x, ty = y;
+        document.addEventListener("mousemove", (e) => { tx = e.clientX; ty = e.clientY; }, { passive: true });
+        const tick = () => {
+          x += (tx - x) * 0.18;
+          y += (ty - y) * 0.18;
+          cursor.style.transform = `translate3d(${x}px,${y}px,0) translate(-50%,-50%)`;
+          requestAnimationFrame(tick);
+        };
+        tick();
       })();
     </script>
   </body>
