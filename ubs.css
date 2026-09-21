@@ -2318,3 +2318,28 @@
 .ubs-dark .ubs-section-content p{color:#b5b5b5 !important;}
 .ubs-dark .ubs-label,.ubs-vision .ubs-label{color:#E4002B !important;}
 .ubs-statement h2 span,.ubs-vision h2 span{color:#E4002B !important;}
+
+
+/* CLIENT INTELLIGENCE — GLOBAL BLACK + UBS RED OVERRIDE */
+.ubs-hero-title h1{color:#101010 !important;}
+.ubs-hero-title h1 span{color:#E4002B !important;}
+.ubs-hero-brand{color:#101010 !important;}
+.ubs-hero-top,.ubs-hero-year,.ubs-hero-description,.ubs-scroll{color:#555 !important;}
+.ubs-section-content h2,.ubs-product-intro h2,.ubs-reflection-content h2{color:#101010 !important;}
+.ubs-section-content p,.ubs-product-intro p,.ubs-reflection-content p{color:#555 !important;}
+.ubs-kicker,.ubs-label,.ubs-small-label,.ubs-research-grid article span,.ubs-insights span,.persona-number,.ubs-logo span{color:#E4002B !important;}
+.ubs-label::after{background:#E4002B !important;}
+.ubs-meta span{color:#777 !important;}
+.ubs-meta strong{color:#101010 !important;}
+.ubs-statement h2{color:#101010 !important;}
+.ubs-statement h2 span{color:#E4002B !important;}
+.ubs-research-grid article h3{color:#101010 !important;}
+.ubs-research-grid article p{color:#555 !important;}
+.ubs-insights p{color:#101010 !important;}
+.ubs-outcomes strong{color:#E4002B !important;}
+.ubs-outcomes p{color:#555 !important;}
+.ubs-next{color:#fff !important;}
+.ubs-next h2{color:#fff !important;}
+.ubs-dark .ubs-section-content h2,.ubs-vision h2{color:#fff !important;}
+.ubs-dark .ubs-section-content p{color:#b5b5b5 !important;}
+.ubs-dark .ubs-label,.ubs-vision .ubs-small-label{color:#E4002B !important;}
