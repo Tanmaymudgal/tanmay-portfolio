@@ -2119,3 +2119,84 @@
 .ubs-research-grid { counter-reset: research-card; }
 .ubs-research-grid article { counter-increment: research-card; }
 .ubs-research-grid article::before { content: counter(research-card, decimal-leading-zero); }
+
+
+/* =========================================================
+   RESEARCH — NO CARD BOX / CLEAN HOVER
+========================================================= */
+.ubs-section:has(.ubs-research-grid) {
+  background: #fff !important;
+}
+
+.ubs-research-grid {
+  background: transparent !important;
+  border-top: 1px solid #d8d8d3;
+  border-bottom: 1px solid #d8d8d3;
+}
+
+.ubs-research-grid article,
+.ubs-research-grid article:nth-child(3) {
+  background: transparent !important;
+  border-right: 1px solid #d8d8d3;
+  border-bottom: 0;
+  transition: none;
+}
+
+.ubs-research-grid article:last-child {
+  border-right: 0;
+}
+
+.ubs-research-grid article:hover,
+.ubs-research-grid article:nth-child(3):hover {
+  background: transparent !important;
+  color: #101010 !important;
+  transform: none !important;
+}
+
+.ubs-research-grid article h3,
+.ubs-research-grid article p,
+.ubs-research-grid article span {
+  background: transparent !important;
+}
+
+.ubs-research-grid article h3 {
+  transition: color .25s ease;
+}
+
+.ubs-research-grid article:hover h3 {
+  color: #e4002b !important;
+}
+
+.ubs-research-grid article::after {
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e4002b;
+}
+
+@media (max-width: 1100px) {
+  .ubs-research-grid article:nth-child(2) {
+    border-right: 0;
+  }
+
+  .ubs-research-grid article:nth-child(3) {
+    border-right: 1px solid #d8d8d3;
+    border-bottom: 0;
+  }
+
+  .ubs-research-grid article:nth-child(4) {
+    border-right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .ubs-research-grid article,
+  .ubs-research-grid article:nth-child(3) {
+    border-right: 0;
+    border-bottom: 1px solid #d8d8d3;
+  }
+
+  .ubs-research-grid article:last-child {
+    border-bottom: 0;
+  }
+}
