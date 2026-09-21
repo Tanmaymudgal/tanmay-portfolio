@@ -2227,3 +2227,25 @@
 .ubs-research-grid article:nth-child(3)::before {
   color: rgba(16,16,16,.045) !important;
 }
+
+
+/* =========================================================
+   TM CURSOR — FINAL DESKTOP OVERRIDE
+========================================================= */
+@media (min-width: 701px) {
+  .tm-cursor {
+    display: block !important;
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    pointer-events: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: #e4002b !important;
+    background: #f5f4ef !important;
+    border: 1px solid #e4002b !important;
+    padding: 4px 6px !important;
+    font: 600 10px/1 "Geist", Arial, sans-serif !important;
+    letter-spacing: .08em !important;
+    white-space: nowrap !important;
+  }
+}
