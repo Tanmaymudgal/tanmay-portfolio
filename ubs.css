@@ -2249,3 +2249,54 @@
     white-space: nowrap !important;
   }
 }
+
+
+/* =========================================================
+   RESEARCH — FINAL VISUAL FIX
+   Restores clear hierarchy and makes 03 fully readable.
+========================================================= */
+.ubs-research-grid article::before {
+  color: rgba(16,16,16,.08) !important;
+}
+
+.ubs-research-grid article:nth-child(1)::before,
+.ubs-research-grid article:nth-child(2)::before,
+.ubs-research-grid article:nth-child(3)::before,
+.ubs-research-grid article:nth-child(4)::before {
+  color: rgba(16,16,16,.08) !important;
+}
+
+.ubs-research-grid article:nth-child(3)::before {
+  color: #e4002b !important;
+  opacity: 1 !important;
+}
+
+.ubs-research-grid article:nth-child(3) h3 {
+  color: #101010 !important;
+}
+
+.ubs-research-grid article:nth-child(3) p {
+  color: #555 !important;
+}
+
+.ubs-research-grid article:nth-child(3) span {
+  color: #e4002b !important;
+}
+
+.ubs-research-grid article:nth-child(3):hover h3 {
+  color: #e4002b !important;
+}
+
+.ubs-research-grid article:nth-child(3):hover p {
+  color: #555 !important;
+}
+
+.ubs-research-grid article:nth-child(3):hover span {
+  color: #e4002b !important;
+}
+
+@media (max-width: 600px) {
+  .ubs-research-grid article:nth-child(3)::before {
+    color: #e4002b !important;
+  }
+}
