@@ -2113,3 +2113,9 @@
     margin-top: 90px;
   }
 }
+
+
+/* Research numbering */
+.ubs-research-grid { counter-reset: research-card; }
+.ubs-research-grid article { counter-increment: research-card; }
+.ubs-research-grid article::before { content: counter(research-card, decimal-leading-zero); }
