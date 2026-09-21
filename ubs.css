@@ -2300,3 +2300,21 @@
     color: #e4002b !important;
   }
 }
+
+
+/* CLIENT INTELLIGENCE — BLACK + UBS RED TYPE SYSTEM */
+:root{--ubs-red:#E4002B;--ubs-black:#101010;--ubs-dark-grey:#555;--ubs-grey:#777;}
+.ubs-page,.ubs-page h1,.ubs-page h2,.ubs-page h3,.ubs-page strong{color:#101010;}
+.ubs-hero-title h1 span{color:#E4002B !important;}
+.ubs-kicker,.ubs-label,.ubs-small-label,.ubs-research-grid article span,.persona-number,.ubs-insights span,.ubs-logo span{color:#E4002B !important;}
+.ubs-label::after{background:#E4002B !important;}
+.ubs-hero-description,.ubs-section-content p,.ubs-product-intro p,.ubs-reflection-content p,.ubs-research-grid article p,.ubs-persona p,.ubs-outcomes p{color:#555 !important;}
+.ubs-outcomes strong{color:#E4002B !important;}
+.ubs-research-grid article::before{color:rgba(228,0,43,.13) !important;}
+.ubs-research-grid article:nth-child(3)::before{color:#E4002B !important;}
+.ubs-nav-right a:hover,.ubs-insights > div:hover span,.ubs-research-grid article:hover h3{color:#E4002B !important;}
+.ubs-dark,.ubs-vision{color:#fff;}
+.ubs-dark .ubs-section-content h2,.ubs-vision h2{color:#fff;}
+.ubs-dark .ubs-section-content p{color:#b5b5b5 !important;}
+.ubs-dark .ubs-label,.ubs-vision .ubs-label{color:#E4002B !important;}
+.ubs-statement h2 span,.ubs-vision h2 span{color:#E4002B !important;}
